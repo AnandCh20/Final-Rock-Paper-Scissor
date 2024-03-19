@@ -1,0 +1,314 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: #8CC461;
+  }
+  
+#you{
+  position: absolute;
+  top: 160px;
+  left:390px;
+  font-family: Roboto;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+#pc{
+  position: absolute;
+  top: 160px;
+  left:790px;
+  font-family: Roboto;
+  font-size: 12px;
+  color: #FFFFFF;
+}  
+  
+.score{
+    width: 60%;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 18%;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px rgb(255, 255, 255) solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding: 20px; */
+  }
+  
+.left ul, .right ul{
+    list-style: none;  
+    padding: 0;
+    margin: 0;
+  }
+
+.left{
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+    width: 200px;
+}  
+  
+.left li {
+    font-family: Roboto;
+    font-size: 25px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+  
+.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 120px;
+  }
+
+.computer, .player {
+    /* border: #000000 solid; */
+    background-color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    width: 120px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  
+#Computer-Score, #Your-Score {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  /********************************/
+.logo {
+    width: 60%;
+    height: 200px;
+  }
+  
+.logo button {
+    border: none;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+  }
+  
+  .logo img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .logo1 {
+    /* border: #000000 solid; */
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 41%;
+    /* width: 40%; */
+    /* height: 200px; */
+  }
+  
+  .logo1 button {
+    border: none;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+    width: 120px;
+    height: 120px;
+    /* margin: 10px; */
+  }
+  
+  .logo1 img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .replica {
+    animation: replica-animation 0.6s linear;
+  }
+  
+  @keyframes replica-animation {
+    to {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  
+  .rock-btn {
+    position: absolute;
+    border: 10px solid #FFA943;
+    
+  }
+  
+  .paper-btn {
+    position: absolute;
+    border: 10px solid #0074B6;
+  }
+  
+  .scissor-btn {
+    position: absolute;
+    border: 10px solid #BD00FF;
+  }
+  
+  .logo .player-choice {
+    background-color: black;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    /* Additional styling for player choice button */
+  }
+  
+  .win-prompt{
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  
+  .win-prompt button {
+    width: 110px;
+    height: 25px;
+    border-radius: 9px;
+    /* padding: 5px; */
+    font-size: 10px;
+  }
+  
+  #click1{
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  #click2{
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  /* Style for the container with the buttons */
+  .btn {
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    margin-left: 1220px; /* Adjust the left position as needed */
+    margin-top: 200px;
+  }
+  
+  /* Style for the 'RULES' button */
+  #rules-btn {
+    margin-right: 10px; /* Add right margin to create space between buttons */
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 2px #FFFFFF solid;
+    border-radius: 10px;
+    font-size: medium;
+    padding: 2px 15px; /* Adjust padding as needed */
+  }
+  
+  /* Style for the 'NEXT' button */
+  #next-btn {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 2px #FFFFFF solid;
+    border-radius: 10px;
+    font-size: medium;
+    padding: 2px 15px; /* Adjust padding as needed */
+  }
+
+.rules p{
+  font-size: 25px;  
+  text-align: center;
+}
+.rules{
+    margin-top: 25px;
+    margin-left: 200px;
+    background: #004429;
+    width: 300px;
+    height: 350px;
+    border-radius: 13px;
+    border: 7px white solid;
+    color:white;
+    padding: 2px;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+}
+.rules li{
+    list-style: square;
+    padding: 5px;
+    margin: 0;
+    /* border: #000000 solid; */
+}
+
+
+.middle{
+    display: flex;
+    flex-direction: row;
+    /* border: #000000 solid; */
+}
+  
+#close-btn{
+    position: absolute;
+    border-radius: 90px;
+    width: 50px;
+    height: 50px;
+    border: #FFFFFF solid;
+    background-color: red;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-left: 1290px;
+
+}
+
+.line-between1 {
+  width: 400px; /* Width of the line */
+  height: 10px; /* Height of the line (adjust as needed) */
+  background-color: black; /* Color of the line */
+  position: absolute;
+  top: 260px; /* Adjust position based on your layout */
+  left: 410px; /* Position in the middle between the buttons */
+}
+
+.line-between2 {
+  width: 10px; /* Width of the line */
+  height: 280px; /* Height of the line (adjust as needed) */
+  background-color: black; /* Color of the line */
+  position: absolute;
+  top: 290px; /* Adjust position based on your layout */
+  left: 400px; /* Position in the middle between the buttons */
+  transform-origin: top left;
+  transform: rotate(-45deg);
+}
+
+.line-between3 {
+  width: 10px; /* Width of the line */
+  height: 280px; /* Height of the line (adjust as needed) */
+  background-color: black; /* Color of the line */
+  position: absolute;
+  top: 290px; /* Adjust position based on your layout */
+  left: 800px; /* Position in the middle between the buttons */
+  transform-origin: top right;
+  transform: rotate(45deg);
+}
