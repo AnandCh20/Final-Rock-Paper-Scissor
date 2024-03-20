@@ -7,12 +7,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const computerScoreElement = document.getElementById('Computer-Score');
     const playerScoreElement = document.getElementById('Your-Score');
   
-    const computerChoiceElement = document.querySelector('.player-choice');
-    const computerChoiceImage = document.getElementById('computer-choice-image');
+    const Brock = document.getElementById('Brock');
+    const Bpaper = document.getElementById('Bpaper');
+    const Bscissor = document.getElementById('Bscissor');
    
     const rockButton = document.querySelector('.rock-btn');
     const paperButton = document.querySelector('.paper-btn');
     const scissorsButton = document.querySelector('.scissor-btn');
+
     const restartBtn = document.getElementById('restart');
     const rulesBtn = document.querySelector('#rules-btn');
     const rules = document.querySelector(".rules");
@@ -36,14 +38,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const scorecard = document.querySelector(".score");
 
-    computerChoiceElement.style.left="1000px";
-    computerChoiceElement.style.top="200px";
+    Brock.style.left="1000px";
+    Brock.style.top="200px";
+
+    Bpaper.style.left="1000px";
+    Bpaper.style.top="200px";
+
+    Bscissor.style.left="1000px";
+    Bscissor.style.top="200px";
+
+    Brock.style.display='none';
+    Bpaper.style.display='none';
+    Bscissor.style.display='none';
   
     prompt1.style.display = 'none';
     prompt2.style.display = 'none';
     restartBtn.style.display = 'none';
     restartBtn.innerText="PLAY AGAIN"
-    computerChoiceElement.style.display='none'
+    
   
     rockButton.style.top="200px";
     rockButton.style.left="350px";
@@ -80,9 +92,15 @@ document.addEventListener('DOMContentLoaded', function () {
         scissorsButton.style.display="none";
         winPrompt.style.left="535px";
         winPrompt.style.top="200px";
-        computerChoiceElement.style.left="750px";
-        computerChoiceElement.style.top="200px";
-        computerChoiceElement.style.display='block';
+        Brock.style.left="750px";
+        Brock.style.top="200px";
+
+        Bpaper.style.left="750px";
+        Bpaper.style.top="200px";
+
+        Bscissor.style.left="750px";
+        Bscissor.style.top="200px";
+        
         l1.style.display="none";
         l2.style.display="none";
         l3.style.display="none";
@@ -95,16 +113,25 @@ document.addEventListener('DOMContentLoaded', function () {
         playRound('paper');
         rockButton.style.display="none";
         scissorsButton.style.display="none";
+
         winPrompt.style.left="535px";
         winPrompt.style.top="200px";
-        computerChoiceElement.style.left="750px";
-        computerChoiceElement.style.top="200px";
+
         paperButton.style.top="200px";
         paperButton.style.left="350px";
-        computerChoiceElement.style.display='block';
+
         l1.style.display="none";
         l2.style.display="none";
         l3.style.display="none";
+
+        Brock.style.left="750px";
+        Brock.style.top="200px";
+
+        Bpaper.style.left="750px";
+        Bpaper.style.top="200px";
+
+        Bscissor.style.left="750px";
+        Bscissor.style.top="200px";
         
     });
   
@@ -116,14 +143,25 @@ document.addEventListener('DOMContentLoaded', function () {
         rockButton.style.display="none";
         winPrompt.style.left="535px";
         winPrompt.style.top="200px";
-        computerChoiceElement.style.left="750px";
-        computerChoiceElement.style.top="200px";
         scissorsButton.style.top="200px";
         scissorsButton.style.left="350px";
-        computerChoiceElement.style.display='block';  
+    
         l1.style.display="none";
         l2.style.display="none";
         l3.style.display="none";  
+
+        Brock.style.left="750px";
+        Brock.style.top="200px";
+
+        Bpaper.style.left="750px";
+        Bpaper.style.top="200px";
+
+        Bscissor.style.left="750px";
+        Bscissor.style.top="200px";
+
+        Brock.style.display='block';
+        Bpaper.style.display='block';
+        Bscissor.style.display='block';
     });
   
     restartBtn.addEventListener('click', function () {
@@ -132,8 +170,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
     function restartGame() {
         updateScores();
-        computerChoiceElement.style.display='none';
-        computerChoiceImage.style.display='none';
+        Brock.style.display='none';
+        Bpaper.style.display='none';
+        Bscissor.style.display='none';
         prompt1.style.display = 'none';
         prompt2.style.display = 'none';
         restartBtn.style.display = 'none';
@@ -144,17 +183,11 @@ document.addEventListener('DOMContentLoaded', function () {
         paperButton.style.display="block";
         scissorsButton.style.display="block";
         rockButton.style.display="block";
-        computerChoiceElement.style.display='block';
-        computerChoiceImage.style.display='block';
         rules.style.display='block';
         closeBtn.style.display= 'block';  
         hints.style.display = 'block';
-        // restartBtn.innerText="REPLAY";
-        // prompt1.innerText = "Hurray!!!";
         prompt1.style.fontSize = "25px";
-        // prompt2.innerText = "YOU WON"
         prompt2.style.fontSize = "15px";
-        // restartBtn.innerText="PLAY AGAIN";
         restartBtn.style.width = "110px";
         restartBtn.style.height = "25px";
         game=true;
@@ -163,8 +196,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function playRound(playerChoice) {
       const randomNumber = Math.floor(Math.random() * 3);
       const computerChoice = choices[randomNumber];
-      computerChoiceImage.src = `https://rock-paper-scissors-lilac-alpha.vercel.app/static/media/${computerChoice}.png`;
-  
+      BOT(computerChoice);
+      
       if (playerChoice === computerChoice) {
           restartBtn.innerText="REPLAY";
           displayResult('TIE');
@@ -177,11 +210,15 @@ document.addEventListener('DOMContentLoaded', function () {
             l1.style.display="none";
             l2.style.display="none";
             l3.style.display="none";  
+
             paperButton.style.display="none";
             scissorsButton.style.display="none";
             rockButton.style.display="none";
-            computerChoiceElement.style.display='none';
-            computerChoiceImage.style.display='none';
+
+            Brock.style.display='none';
+            Bpaper.style.display='none';
+            Bscissor.style.display='none';
+            
             rules.style.display='none';
             closeBtn.style.display= 'none';  
             hints.style.display = 'none';
@@ -210,11 +247,38 @@ document.addEventListener('DOMContentLoaded', function () {
   
     function displayResult(result) {
         prompt1.innerText = result;
+        prompt2.innerText = " ";
     }
   
     function updateScores() {
         playerScoreElement.textContent = playerScore;
         computerScoreElement.textContent = computerScore;
+    }
+
+    function BOT(n){
+        console.log(n)
+        if(n=='paper'){
+            Bpaper.style.left="750px";
+            Bpaper.style.top="200px";
+            Bpaper.style.display = "block";
+            Brock.style.display = "none";
+            Bscissor.style.display = "none";
+        }
+        if(n == 'scissors'){
+            Bscissor.style.left="750px";
+            Bscissor.style.top="200px";
+            Bpaper.style.display = "none";
+            Brock.style.display = "none";
+            Bscissor.style.display = "block";
+        }
+        if(n=='rock'){
+            
+            Brock.style.left="750px";
+            Brock.style.top="200px";
+            Bpaper.style.display = "none";
+            Brock.style.display = "block";
+            Bscissor.style.display = "none";
+        }
     }
 
   }
